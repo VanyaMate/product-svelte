@@ -1,0 +1,21 @@
+:root .light {
+    --bg-main-color                : var(--white);
+    --bg-main-foreground-color     : var(--black);
+    --bg-second-color              : var(--obscure-light-gray);
+    --bg-second-foreground-color   : var(--dark-gray);
+    --bg-ghost-color               : var(--light-gray);
+    --bg-ghost-foreground-color    : var(--obscure-dark-gray);
+    --text-main-color              : var(--black);
+    --text-main-foreground-color   : var(--white);
+    --text-second-color            : var(--gray);
+    --text-second-foreground-color : var(--dark-gray);
+    --primary-color                : var(--blue);
+    --on-primary-text-color        : var(--white);
+    --second-color                 : var(--green);
+    --on-second-text-color         : var(--white);
+    --ghost-color                  : var(--lighten-gray);
+    --on-ghost-text-color          : var(--white);
+    --danger-color                 : var(--red);
+    --on-danger-color              : var(--white);
+    --border-main-color            : var(--obscure-light-gray);
+}
