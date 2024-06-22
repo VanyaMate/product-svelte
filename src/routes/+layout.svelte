@@ -3,4 +3,6 @@
     <a href="/about">About</a>
 </nav>
 
-<slot/>
+<slot>
+    Loading...
+</slot>
