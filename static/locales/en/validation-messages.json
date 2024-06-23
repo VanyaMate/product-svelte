@@ -1,4 +1,0 @@
-{
-    "min_length_error": "Length must be greater than {{length}}",
-    "max_length_error": "Length must be no more than {{length}}"
-}
