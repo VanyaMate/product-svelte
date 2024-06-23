@@ -1,0 +1,34 @@
+@import "palette/palette";
+@import "themes/light";
+@import "themes/dark";
+@import "sizes/offsets/offsets";
+@import "sizes/text-sizes/test-sizes";
+@import "transitions/transitions";
+@import "animations/animations";
+
+* {
+    margin      : 0;
+    padding     : 0;
+    box-sizing  : border-box;
+    font-family : Consolas, SansSerif, serif;
+}
+
+input,
+button,
+textarea,
+select {
+    font : inherit;
+}
+
+.blockScroll {
+    overflow : hidden;
+}
+
+.loading {
+    animation : loading ease-in-out .5s infinite;
+}
+
+*[inert] {
+    transition : var(--transition-medium);
+    filter     : blur(5px);
+}
