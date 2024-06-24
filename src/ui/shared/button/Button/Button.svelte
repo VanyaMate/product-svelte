@@ -16,7 +16,7 @@
     }
 </script>
 
-<button {...$$props} on:click class="container {styleType} {size}" class:quad>
+<button {...$$restProps} on:click class="container {styleType} {size}" class:quad>
     <slot/>
 </button>
 
