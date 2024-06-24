@@ -16,6 +16,7 @@ export default defineConfig({
             '@/feature/*': './src/ui/feature/*',
             '@/widget/*' : './src/ui/widget/*',
             '@/layout/*' : './src/ui/layout/*',
+            '@/const/*'  : './src/const/*',
         },
     },
 });
