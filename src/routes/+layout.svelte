@@ -2,11 +2,14 @@
     import { theme } from '@/model/theme/theme.model';
     import { onMount } from 'svelte';
     import { refreshEffect } from '@/model/authentication/authentication.model';
+    import { language, loadSchemaEffect } from '@/model/language/language.model';
 
 
     // TODO: Перенести в хук?
     onMount(refreshEffect);
 
+    // TODO: Перенести в хук?
+    $: loadSchemaEffect($language);
 
     // TODO: Перенести в хук?
     $: {

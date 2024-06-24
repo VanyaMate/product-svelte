@@ -3,6 +3,8 @@
     import ThemeToggleButton from '@/feature/theme/ThemeToggleButton/ThemeToggleButton.svelte';
     import { authData, authPending, loginEffect } from '@/model/authentication/authentication.model';
     import UserLogoutButton from '@/feature/user/UserLogoutButton/UserLogoutButton.svelte';
+    import { language, languageSchema, toggleLanguageEffect } from '@/model/language/language.model';
+    import Button from '@/shared/button/Button/Button.svelte';
 
 
     let login: string     = '';
@@ -19,8 +21,16 @@
 <container>
     <ThemeToggleButton/>
 
+    {#if $languageSchema}
+        {$languageSchema?.page?.home?.title}
+    {/if}
+
+    <Button on:click={() => `${$language}` === 'ru' ? toggleLanguageEffect('en') : toggleLanguageEffect('ru')}>
+        Переключить язык с {$language}
+    </Button>
+
     {#if $authData}
-        <h1>Hello {$authData.login}</h1>
+        <h1>{$authData.login}</h1>
         <UserLogoutButton/>
     {:else}
         <form class:pending={$authPending} on:submit={onSubmit}>
