@@ -1,4 +1,4 @@
-import type { ResponseInterceptor } from '$lib/fetch/createFetch';
+import type { ResponseInterceptor } from '$lib/fetch/createFetchWithInterceptors';
 import { isDomainResponse } from 'product-types/dist/response/DomainResponse';
 import { isDomainTokens } from 'product-types/dist/token/DomainTokens';
 import {

@@ -16,8 +16,11 @@ const config = {
             '@/layout/*': './src/ui/layout/*',
             '@/style/*': './src/ui/style/*',
             '@/const/*': './src/const/*',
-        }
-    }
+        },
+    },
+    "include": [
+        "./.typescript/declarations"
+    ]
 };
 
 export default config;

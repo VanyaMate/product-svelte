@@ -1,4 +1,6 @@
-import { createFetchWithInterceptors } from '../fetch/createFetch';
+import {
+    createFetchWithInterceptors,
+} from '../fetch/createFetchWithInterceptors';
 import {
     addUserTokensInterceptor,
 } from '$lib/api/interceptors/request/add-user-tokens.interceptor';
@@ -17,7 +19,7 @@ import {
 
 
 export const api = createFetchWithInterceptors([
-    addBaseUrlInterceptor('http://localhost:3000/api/v1/'),
+    addBaseUrlInterceptor(`${ __API__ }/v1/`),
     addJsonContentTypeInterceptor,
     addUserTokensInterceptor,
 ], [

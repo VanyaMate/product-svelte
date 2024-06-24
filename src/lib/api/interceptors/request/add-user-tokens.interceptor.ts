@@ -1,4 +1,4 @@
-import type { RequestInterceptor } from '$lib/fetch/createFetch';
+import type { RequestInterceptor } from '$lib/fetch/createFetchWithInterceptors';
 import {
     LOCAL_STORAGE_USER_ACCESS_TOKEN, LOCAL_STORAGE_USER_REFRESH_TOKEN,
 } from '@/const/user/user.const';

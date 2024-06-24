@@ -2,13 +2,21 @@
     import { ButtonSizeType, ButtonStyleType } from '@/shared/button/Button/types/Button.type';
 
 
-    export let type: 'reset' | 'submit' | 'button' = 'button';
-    export let styleType: ButtonStyleType          = ButtonStyleType.PRIMARY;
-    export let size: ButtonSizeType                = ButtonSizeType.MEDIUM;
-    export let quad: boolean                       = false;
+    import type { HTMLButtonAttributes } from 'svelte/elements';
+
+
+    export let styleType: ButtonStyleType = ButtonStyleType.PRIMARY;
+    export let size: ButtonSizeType       = ButtonSizeType.MEDIUM;
+    export let quad: boolean              = false;
+
+    interface $$Props extends HTMLButtonAttributes {
+        size?: ButtonSizeType,
+        styleType?: ButtonStyleType,
+        quad?: boolean
+    }
 </script>
 
-<button {type} on:click class="container {styleType} {size}" class:quad>
+<button {...$$props} on:click class="container {styleType} {size}" class:quad>
     <slot/>
 </button>
 

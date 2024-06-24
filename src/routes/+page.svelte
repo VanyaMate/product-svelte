@@ -2,6 +2,7 @@
     import '@/style/index';
     import ThemeToggleButton from '@/feature/theme/ThemeToggleButton/ThemeToggleButton.svelte';
     import { authData, authPending, loginEffect } from '@/model/authentication/authentication.model';
+    import UserLogoutButton from '@/feature/user/UserLogoutButton/UserLogoutButton.svelte';
 
 
     let login: string     = '';
@@ -10,7 +11,6 @@
 
     $: onSubmit = function (event: Event) {
         event.preventDefault();
-        console.log('submit', login, password, remember);
         loginEffect({ login, password, remember });
     };
 </script>
@@ -21,6 +21,7 @@
 
     {#if $authData}
         <h1>Hello {$authData.login}</h1>
+        <UserLogoutButton/>
     {:else}
         <form class:pending={$authPending} on:submit={onSubmit}>
             <input type="text" bind:value={login}/>

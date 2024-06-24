@@ -1,4 +1,4 @@
-import type { RequestInterceptor } from '$lib/fetch/createFetch';
+import type { RequestInterceptor } from '$lib/fetch/createFetchWithInterceptors';
 
 
 export const addJsonContentTypeInterceptor: RequestInterceptor = async function (url, init) {
