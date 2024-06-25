@@ -2,6 +2,7 @@
     import { theme } from '@/model/theme/theme.model';
     import { onMount } from 'svelte';
     import { authData, refreshEffect } from '@/model/authentication/authentication.model';
+    import MainLayout from '@/shared/layout/MainLayout/MainLayout.svelte';
 
 
     // TODO: Перенести в хук?
@@ -22,8 +23,12 @@
 </script>
 
 {#if $authData}
-    <div>navigation</div>
-    <slot/>
+    <MainLayout>
+        <div slot="header">header filler</div>
+        <div slot="left-side-menu">left side menu</div>
+        <div slot="right-side-menu">right side menu</div>
+        <slot/>
+    </MainLayout>
 {:else}
     <slot/>
 {/if}
