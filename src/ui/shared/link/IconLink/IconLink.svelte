@@ -13,7 +13,7 @@
     export let href: string = '#';
 </script>
 
-<Link {...$$restProps} {href} class="link">
+<Link {...$$restProps} {href} class="link {$$restProps.class}">
     <span class="icon">
         <Icon {icon} class="icon-place"/>
     </span>
@@ -47,5 +47,9 @@
         align-items     : center;
         color           : var(--text-second-color);
         border-radius   : var(--offset-small);
+    }
+
+    .text {
+        font-size : var(--font-size-m);
     }
 </style>

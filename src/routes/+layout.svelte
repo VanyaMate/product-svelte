@@ -3,9 +3,9 @@
     import { onMount } from 'svelte';
     import { authData, refreshEffect } from '@/model/authentication/authentication.model';
     import MainLayout from '@/shared/layout/MainLayout/MainLayout.svelte';
-    import IconLink from '@/shared/link/IconLink/IconLink.svelte';
     import '@/style/index';
     import SideNavigationMenu from '@/widget/site/SideNavigationMenu/SideNavigationMenu.svelte';
+    import HeaderMenu from '@/widget/site/HeaderMenu/HeaderMenu.svelte';
 
 
     // TODO: Перенести в хук?
@@ -27,7 +27,7 @@
 
 {#if $authData}
     <MainLayout>
-        <div slot="header">header filler</div>
+        <HeaderMenu slot="header"/>
         <SideNavigationMenu slot="left-side-menu"/>
         <div slot="right-side-menu">right side menu</div>
         <slot/>

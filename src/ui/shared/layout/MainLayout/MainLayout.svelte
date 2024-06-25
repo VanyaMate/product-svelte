@@ -49,7 +49,7 @@
             on:click={() => leftSideMenu_open = false}
             role="button"
             aria-label="Закрыть меню"
-            tabindex="1"
+            tabindex="0"
     />
 </div>
 
