@@ -25,8 +25,7 @@
         transition      : var(--transition-medium);
 
         &:hover {
-            cursor          : pointer;
-            text-decoration : underline;
+            cursor : pointer;
         }
 
         &.primary {

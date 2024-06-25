@@ -32,6 +32,10 @@
         align-items : center;
         white-space : nowrap;
         color       : var(--text-second-color);
+
+        &:hover {
+            text-decoration : none;
+        }
     }
 
     .icon {

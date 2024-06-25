@@ -1,7 +1,7 @@
 <script lang="ts">
     import { authData } from '@/model/authentication/authentication.model';
     import UserLogoutButton from '@/feature/user/UserLogoutButton/UserLogoutButton.svelte';
-    import SignForm from '@/widget/SignForm/SignForm.svelte';
+    import SignForm from '@/widget/user/SignForm/SignForm.svelte';
 </script>
 
 {#if $authData}

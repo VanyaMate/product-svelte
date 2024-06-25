@@ -1,9 +1,9 @@
 <script lang="ts">
-    import SignInForm from '@/widget/SignForm/SignInForm/SignInForm.svelte';
-    import SignUpForm from '@/widget/SignForm/SignUpForm/SignUpForm.svelte';
     import Button from '@/shared/button/Button/Button.svelte';
     import { ButtonStyleType } from '@/shared/button/Button/types/Button.type';
     import { tick } from 'svelte';
+    import SignInForm from '@/widget/user/SignForm/SignInForm/SignInForm.svelte';
+    import SignUpForm from '@/widget/user/SignForm/SignUpForm/SignUpForm.svelte';
 
 
     type FormType = 'sign-up' | 'sign-in';

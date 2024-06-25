@@ -5,6 +5,7 @@
     import MainLayout from '@/shared/layout/MainLayout/MainLayout.svelte';
     import IconLink from '@/shared/link/IconLink/IconLink.svelte';
     import '@/style/index';
+    import SideNavigationMenu from '@/widget/site/SideNavigationMenu/SideNavigationMenu.svelte';
 
 
     // TODO: Перенести в хук?
@@ -27,10 +28,7 @@
 {#if $authData}
     <MainLayout>
         <div slot="header">header filler</div>
-        <div slot="left-side-menu">
-            <IconLink href="/" icon="ion:home">Моя страница</IconLink>
-            <IconLink href="/dialogues" icon="ion:message">Диалоги</IconLink>
-        </div>
+        <SideNavigationMenu slot="left-side-menu"/>
         <div slot="right-side-menu">right side menu</div>
         <slot/>
     </MainLayout>
