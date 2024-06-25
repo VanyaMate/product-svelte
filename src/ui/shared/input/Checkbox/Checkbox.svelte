@@ -68,6 +68,7 @@
                     &:after {
                         content    : '✓';
                         background : var(--primary-color);
+                        box-shadow : 0 0 25px -5px var(--primary-color);
                     }
                 }
             }
@@ -83,7 +84,7 @@
 
                 &:checked {
                     & ~ label:after {
-                        box-shadow : 0 0 0 2px var(--bg-main-color), 0 0 0 4px var(--primary-color);
+                        box-shadow : 0 0 0 2px var(--bg-main-color), 0 0 0 4px var(--primary-color), 0 0 10px 0 var(--primary-color);
                     }
                 }
             }

@@ -72,7 +72,7 @@
             width         : 120px;
             height        : 120px;
             border-radius : 50%;
-            box-shadow    : 0 0 200px 0px var(--primary-color);
+            box-shadow    : 0 0 200px 0 var(--primary-color);
         }
 
         h1 {

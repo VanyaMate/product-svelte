@@ -5,9 +5,10 @@
     import { ButtonStyleType } from '@/shared/button/Button/types/Button.type';
     import Input from '@/shared/input/Input/Input.svelte';
     import Button from '@/shared/button/Button/Button.svelte';
-    import type { HTMLFormAttributes } from 'svelte/elements';
     import Checkbox from '@/shared/input/Checkbox/Checkbox.svelte';
     import { emailValidator } from '$lib/validation/email.validator';
+    import Form from '@/shared/form/Form/Form.svelte';
+    import type { HTMLFormAttributes } from 'svelte/elements';
 
 
     interface $$Props extends HTMLFormAttributes {
@@ -38,7 +39,7 @@
 
 </script>
 
-<form {...$$restProps} class:pending={$authPending} on:submit={onSubmit}>
+<Form {...$$restProps} pending={$authPending} on:submit={onSubmit}>
     <Input
             id="email"
             type="text"
@@ -69,17 +70,4 @@
     />
     <Checkbox bind:checked={remember} label="Запомнить меня" id="remember"/>
     <Button type="submit" disabled={formIsInvalid} styleType={ButtonStyleType.PRIMARY}>Войти</Button>
-</form>
-<style>
-    form {
-        width          : 300px;
-        display        : flex;
-        flex-direction : column;
-        gap            : 10px;
-    }
-
-    .pending {
-        pointer-events : none;
-        opacity        : .6;
-    }
-</style>
+</Form>
