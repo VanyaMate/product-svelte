@@ -24,26 +24,24 @@
 
 <style lang="scss">
     :global(.link) {
-        width       : 100%;
-        min-width   : 300px;
+        min-width   : 100%;
+        max-width   : 100%;
+        overflow    : hidden;
         display     : flex;
         gap         : var(--offset-small);
         align-items : center;
         white-space : nowrap;
+        color       : var(--text-second-color);
     }
 
     .icon {
-        width           : 30px;
-        height          : 30px;
+        min-width       : 30px;
+        min-height      : 30px;
         background      : var(--bg-ghost-color);
         display         : flex;
         justify-content : center;
         align-items     : center;
         color           : var(--text-second-color);
         border-radius   : var(--offset-small);
-    }
-
-    .text {
-        color : var(--text-second-color);
     }
 </style>
