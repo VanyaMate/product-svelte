@@ -1,9 +1,15 @@
 <script>
     import Button from "@/shared/button/Button/Button.svelte";
     import Icon from "@iconify/svelte";
+    import {afterUpdate, beforeUpdate} from "svelte";
+    import {keyboardClose} from "$lib/keyboard/keyboardClose";
 
     export let leftSideMenu_open = false;
     export let rightSideMenu_open = false;
+
+    let keyboardEventUnsubscribe;
+    beforeUpdate(() => keyboardEventUnsubscribe?.())
+    afterUpdate(() => keyboardEventUnsubscribe = keyboardClose(leftSideMenu_open, () => leftSideMenu_open = false))
 </script>
 
 

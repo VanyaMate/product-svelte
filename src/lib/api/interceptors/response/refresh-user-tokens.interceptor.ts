@@ -13,9 +13,10 @@ export const responseTokenRefreshedInterceptor: ResponseInterceptor = async (res
     const responsePayload: unknown = response['data'];
     if (responsePayload) {
         if (isDomainResponse(responsePayload)) {
-            if (isDomainTokens(responsePayload.tokens)) {
-                localStorage.setItem(LOCAL_STORAGE_USER_ACCESS_TOKEN, responsePayload.tokens[0]);
-                localStorage.setItem(LOCAL_STORAGE_USER_REFRESH_TOKEN, responsePayload.tokens[1]);
+            const responseData = responsePayload.data;
+            if (isDomainTokens(responseData.tokens)) {
+                localStorage.setItem(LOCAL_STORAGE_USER_ACCESS_TOKEN, responseData.tokens[0]);
+                localStorage.setItem(LOCAL_STORAGE_USER_REFRESH_TOKEN, responseData.tokens[1]);
             }
         }
     }
