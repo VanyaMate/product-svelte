@@ -7,6 +7,7 @@
     import Button from '@/shared/button/Button/Button.svelte';
     import type { HTMLFormAttributes } from 'svelte/elements';
     import Checkbox from '@/shared/input/Checkbox/Checkbox.svelte';
+    import { emailValidator } from '$lib/validation/email.validator';
 
 
     interface $$Props extends HTMLFormAttributes {
@@ -45,7 +46,7 @@
             bind:valid={emailValid}
             label="Почта"
             placeholder="Введите почту"
-            validationMethod={loginValidator}
+            validationMethod={emailValidator}
             bind:input={firstInput}
     />
     <Input
