@@ -1,5 +1,5 @@
 import {
-    DomainServiceResponseError,
+    type DomainServiceResponseError,
     isDomainServiceResponseError,
 } from 'product-types/dist/error/DomainServiceResponseError';
 

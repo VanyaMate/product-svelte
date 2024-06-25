@@ -7,7 +7,6 @@ import {
 
 
 export const addUserTokensInterceptor: RequestInterceptor = async (data, init) => {
-    console.log('add tokens');
     const accessToken: string | undefined  = localStorage.getItem(LOCAL_STORAGE_USER_ACCESS_TOKEN);
     const refreshToken: string | undefined = localStorage.getItem(LOCAL_STORAGE_USER_REFRESH_TOKEN);
     init.headers                           = new Headers(init.headers);

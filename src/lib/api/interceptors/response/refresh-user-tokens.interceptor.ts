@@ -10,13 +10,12 @@ import {
 
 
 export const responseTokenRefreshedInterceptor: ResponseInterceptor = async (response) => {
-    const data: unknown = response['data'];
-    if (data) {
-        if (isDomainResponse(data)) {
-            const payload = data.data;
-            if (isDomainTokens(payload.tokens)) {
-                localStorage.setItem(LOCAL_STORAGE_USER_ACCESS_TOKEN, payload.tokens[0]);
-                localStorage.setItem(LOCAL_STORAGE_USER_REFRESH_TOKEN, payload.tokens[1]);
+    const responsePayload: unknown = response['data'];
+    if (responsePayload) {
+        if (isDomainResponse(responsePayload)) {
+            if (isDomainTokens(responsePayload.tokens)) {
+                localStorage.setItem(LOCAL_STORAGE_USER_ACCESS_TOKEN, responsePayload.tokens[0]);
+                localStorage.setItem(LOCAL_STORAGE_USER_REFRESH_TOKEN, responsePayload.tokens[1]);
             }
         }
     }

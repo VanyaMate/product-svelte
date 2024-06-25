@@ -1,6 +1,6 @@
 import { api } from '$lib/api/api';
 import {
-    assertDomainResponse, isDomainResponse,
+    isDomainResponse,
 } from 'product-types/dist/response/DomainResponse';
 
 
