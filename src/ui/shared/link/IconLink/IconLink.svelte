@@ -1,6 +1,7 @@
 <script lang="ts">
     import type { HTMLAnchorAttributes } from 'svelte/elements';
     import Icon from '@iconify/svelte';
+    import Link from '@/shared/link/Link/Link.svelte';
 
 
     interface $$Props extends HTMLAnchorAttributes {
@@ -12,17 +13,17 @@
     export let href: string = '#';
 </script>
 
-<a {...$$restProps} {href}>
+<Link {...$$restProps} {href} class="link">
     <span class="icon">
         <Icon {icon} class="icon-place"/>
     </span>
     <span class="text">
         <slot/>
     </span>
-</a>
+</Link>
 
 <style lang="scss">
-    a {
+    :global(.link) {
         width       : 100%;
         min-width   : 300px;
         display     : flex;

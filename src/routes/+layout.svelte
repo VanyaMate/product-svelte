@@ -3,7 +3,8 @@
     import { onMount } from 'svelte';
     import { authData, refreshEffect } from '@/model/authentication/authentication.model';
     import MainLayout from '@/shared/layout/MainLayout/MainLayout.svelte';
-    import IconLink from '@/entity/site/IconLink/IconLink.svelte';
+    import IconLink from '@/shared/link/IconLink/IconLink.svelte';
+    import '@/style/index';
 
 
     // TODO: Перенести в хук?
