@@ -10,12 +10,13 @@ export const createFetchWithInterceptors = (
             [ data, init ] = await interceptor(data, init);
         }
 
-        let response = await fetch(data, init);
+        return await fetch(data, init)
+            .then(async (response) => {
+                for (const interceptor of responseInterceptors) {
+                    response = await interceptor(response);
+                }
 
-        for (const interceptor of responseInterceptors) {
-            response = await interceptor(response);
-        }
-
-        return response;
+                return response;
+            });
     };
 };

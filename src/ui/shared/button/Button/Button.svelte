@@ -14,7 +14,8 @@
     export let quad: boolean              = false;
 </script>
 
-<button {...$$restProps} on:click class="container {styleType} {size}" class:quad>
+<button {...$$restProps} on:click class="container {styleType} {size} {$$restProps.class ?? ''}" class:quad>
+
     <slot/>
 </button>
 

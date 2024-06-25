@@ -1,6 +1,6 @@
 import { api } from '$lib/api/api';
 import {
-    assertDomainResponse,
+    assertDomainResponse, isDomainResponse,
 } from 'product-types/dist/response/DomainResponse';
 
 
@@ -8,7 +8,10 @@ export const createRequest = function (url: RequestInfo, init?: RequestInit) {
     return api(url, init)
         .then((response) => response['data'] ?? response.json())
         .then((data: unknown) => {
-            assertDomainResponse(data, 'data', 'DomainResponse');
-            return data;
+            if (isDomainResponse(data)) {
+                return data;
+            }
+
+            throw data;
         });
 };

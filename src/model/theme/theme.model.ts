@@ -3,10 +3,10 @@ import {
     setThemeAction,
     ThemeType,
 } from '@/action/theme/setTheme.action';
-import { LOCAL_STORAGE_THEME } from '../../const/theme/theme.const';
+import { getThemeAction } from '@/action/theme/getTheme.action';
 
 
 export const setThemeEffect = createEffect(setThemeAction);
 
-export const theme = createStore<ThemeType>(localStorage.getItem(LOCAL_STORAGE_THEME) as ThemeType ?? ThemeType.DARK)
+export const theme = createStore<ThemeType>(getThemeAction())
     .on(setThemeEffect, (_, payload) => payload);

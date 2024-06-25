@@ -1,4 +1,6 @@
-import type { ResponseInterceptor } from '$lib/fetch/createFetchWithInterceptors';
+import type {
+    ResponseInterceptor,
+} from '$lib/fetch/createFetchWithInterceptors';
 import { isDomainResponse } from 'product-types/dist/response/DomainResponse';
 import { isDomainTokens } from 'product-types/dist/token/DomainTokens';
 import {
@@ -11,9 +13,10 @@ export const responseTokenRefreshedInterceptor: ResponseInterceptor = async (res
     const data: unknown = response['data'];
     if (data) {
         if (isDomainResponse(data)) {
-            if (isDomainTokens(data.tokens)) {
-                localStorage.setItem(LOCAL_STORAGE_USER_ACCESS_TOKEN, data.tokens[0]);
-                localStorage.setItem(LOCAL_STORAGE_USER_REFRESH_TOKEN, data.tokens[1]);
+            const payload = data.data;
+            if (isDomainTokens(payload.tokens)) {
+                localStorage.setItem(LOCAL_STORAGE_USER_ACCESS_TOKEN, payload.tokens[0]);
+                localStorage.setItem(LOCAL_STORAGE_USER_REFRESH_TOKEN, payload.tokens[1]);
             }
         }
     }

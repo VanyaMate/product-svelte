@@ -1,4 +1,4 @@
-import { LOCAL_STORAGE_THEME } from '../../const/theme/theme.const';
+import { LOCAL_STORAGE_THEME } from '@/const/theme/theme.const';
 
 
 export enum ThemeType {
