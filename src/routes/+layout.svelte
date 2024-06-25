@@ -3,6 +3,7 @@
     import { onMount } from 'svelte';
     import { authData, refreshEffect } from '@/model/authentication/authentication.model';
     import MainLayout from '@/shared/layout/MainLayout/MainLayout.svelte';
+    import IconLink from '@/entity/site/IconLink/IconLink.svelte';
 
 
     // TODO: Перенести в хук?
@@ -25,7 +26,10 @@
 {#if $authData}
     <MainLayout>
         <div slot="header">header filler</div>
-        <div slot="left-side-menu">left side menu</div>
+        <div slot="left-side-menu">
+            <IconLink href="/" icon="ion:home">Моя страница</IconLink>
+            <IconLink href="/dialogues" icon="ion:message">Диалоги</IconLink>
+        </div>
         <div slot="right-side-menu">right side menu</div>
         <slot/>
     </MainLayout>
