@@ -47,6 +47,7 @@
         align-items     : center;
         color           : var(--text-second-color);
         border-radius   : var(--offset-small);
+        transition      : var(--transition-fast);
     }
 
     .text {
