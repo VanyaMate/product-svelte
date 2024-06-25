@@ -7,8 +7,8 @@
 
 
     type FormType = 'sign-up' | 'sign-in';
-    export let firstInput: HTMLInputElement | undefined;
-    export let formType: FormType = 'sign-in';
+    export let firstInput: HTMLInputElement | undefined = undefined;
+    export let formType: FormType                       = 'sign-in';
 
     $: toggleForm = function (type: FormType) {
         return async () => {

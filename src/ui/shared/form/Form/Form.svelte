@@ -9,7 +9,7 @@
     export let pending: boolean | undefined = undefined;
 </script>
 
-<form {...$$restProps} class:pending>
+<form {...$$restProps} class:pending on:submit>
     <slot/>
 </form>
 

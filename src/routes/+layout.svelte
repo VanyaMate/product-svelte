@@ -1,7 +1,7 @@
 <script lang="ts">
     import { theme } from '@/model/theme/theme.model';
     import { onMount } from 'svelte';
-    import { refreshEffect } from '@/model/authentication/authentication.model';
+    import { authData, refreshEffect } from '@/model/authentication/authentication.model';
 
 
     // TODO: Перенести в хук?
@@ -21,4 +21,9 @@
     }
 </script>
 
-<slot/>
+{#if $authData}
+    <div>navigation</div>
+    <slot/>
+{:else}
+    <slot/>
+{/if}
