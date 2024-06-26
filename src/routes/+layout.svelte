@@ -6,6 +6,7 @@
     import '@/style/index';
     import SideNavigationMenu from '@/widget/site/SideNavigationMenu/SideNavigationMenu.svelte';
     import HeaderMenu from '@/widget/site/HeaderMenu/HeaderMenu.svelte';
+    import SignForm from '@/widget/user/SignForm/SignForm.svelte';
 
 
     // TODO: Перенести в хук?
@@ -33,5 +34,5 @@
         <slot/>
     </MainLayout>
 {:else}
-    <slot/>
+    <SignForm/>
 {/if}

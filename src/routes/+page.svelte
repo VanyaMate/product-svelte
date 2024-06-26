@@ -1,12 +1,7 @@
 <script lang="ts">
     import { authData } from '@/model/authentication/authentication.model';
     import UserLogoutButton from '@/feature/user/UserLogoutButton/UserLogoutButton.svelte';
-    import SignForm from '@/widget/user/SignForm/SignForm.svelte';
 </script>
 
-{#if $authData}
-    <h1>Hi ${$authData.login}</h1>
-    <UserLogoutButton/>
-{:else}
-    <SignForm/>
-{/if}
+<h1>Hi ${$authData.login}</h1>
+<UserLogoutButton/>

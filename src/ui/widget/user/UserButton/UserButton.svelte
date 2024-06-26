@@ -7,7 +7,7 @@
 
 <div class="container">
     <FakeAvatar letter={$authData.login}/>
-    <Link href="/profile/{$authData.login}">
+    <Link href="/{$authData.login}">
         {$authData.login}
     </Link>
     <UserLogoutButton/>

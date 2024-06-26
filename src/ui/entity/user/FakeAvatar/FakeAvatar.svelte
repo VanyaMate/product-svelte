@@ -20,8 +20,8 @@
         display         : flex;
         align-items     : center;
         justify-content : center;
-        width           : 30px;
-        height          : 30px;
         text-transform  : uppercase;
+        width           : var(--fake-avatar-width);
+        height          : var(--fake-avatar-height);
     }
 </style>
